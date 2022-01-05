@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Starter Template · Bootstrap v4.6</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/starter-template/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+
+    
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark">
+        <div class="container"><a class="navbar-brand" href="#"><b>Navbar</b></a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive" style="color: rgb(0,0,0);">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
+
+                       <% for(var i=0;i<maincategory.length;i++){ %>
+                       <li class="nav-item dropdown">
+                    
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><%=maincategory[i].Name%></a>
+                        <ul class="dropdown-menu">
+                         <% for(var j=0;j<subcategory.length;j++){ %>
+                         <% if(maincategory[i].id==subcategory[j].mid) {%>
+                          <li><a class="dropdown-item" href="#"> <%=subcategory[j].Name%> &raquo </a>
+                            <ul class="submenu dropdown-menu">
+                               <% for(var k=0;k<product.length;k++){ %>
+                               <% if(subcategory[j].id == product[k].Subid) {%>
+                                <li><a class="dropdown-item" href="#"> <%=product[k].Name %> </a></li>
+                                <%} } %>
+                             </ul>
+                          </li>
+                          <% } } %>
+
+                        </ul>
+                    </li>
+                    <% } %>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<main role="main">
+
+  <div class="starter-template row">
+   
+    <div class="col-6 col-one">
+     <p>hello</p>
+    </div>
+    <div class="col-6 col-two">
+         <p>hello2</p>
+    </div>
+
+  </div>
+
+</main><!-- /.container -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
